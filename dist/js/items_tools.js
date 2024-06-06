@@ -228,7 +228,7 @@ function process_item_encoder(result, using_txt) {
                 encoded_buffer_file[mem_pos++] = Number(result1[15]) // collision type
                 
                 // break hits
-                if (result1[16].includes("r")) encoded_buffer_file[mem_pos++] = Number(result1[16].slice(0, -1))
+                if (isNaN(result.items[a].break_hits) && result.items[a].break_hits.includes("r")) encoded_buffer_file[mem_pos++] = Number(result.items[a].break_hits.slice(0, -1))
                 else encoded_buffer_file[mem_pos++] = Number(result1[16]) * 6
 
                 // drop chance
