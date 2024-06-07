@@ -229,7 +229,7 @@ function process_item_encoder(result, using_txt) {
                 
                 // break hits
                 if (isNaN(result.items[a].break_hits) && result.items[a].break_hits.includes("r")) encoded_buffer_file[mem_pos++] = Number(result.items[a].break_hits.slice(0, -1))
-                else encoded_buffer_file[mem_pos++] = Number(result1[16]) * 6
+                else encoded_buffer_file[mem_pos++] = Number(result.items[a].break_hits) * 6
 
                 // drop chance
                 write_buffer_number(mem_pos, 4, result1[17])
